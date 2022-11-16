@@ -1,5 +1,5 @@
 <template>
-  <h1>Transactions ({{}})</h1>
+  <h1>Transactions (3)</h1>
   <div>
     <div>
       <button>
@@ -19,19 +19,6 @@
         <p>Filter</p>
       </button>
     </div>
-
-    <transition name="slide" appear mode="out-in">
-      <div>
-        <input type="checkbox" />
-        <p>
-          <span>{{}} selected</span>
-        </p>
-
-        <button>
-          <p>Delete</p>
-        </button>
-      </div>
-    </transition>
 
     <div>
       <table>
@@ -68,9 +55,6 @@
                 <p>Quantity</p>
               </span>
             </th>
-            <th>
-              <p>Actions</p>
-            </th>
           </tr>
         </thead>
 
@@ -91,7 +75,6 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
           </tr>
 
           <tr>
@@ -104,13 +87,9 @@
             </td>
             <td>
               <div>
-                <div>
-                  <span> John Doe </span>
+                <span> John Doe </span>
 
-                  <span> johndoe@mail.com </span>
-                </div>
-
-                <button></button>
+                <span> johndoe@mail.com </span>
               </div>
             </td>
             <td>
@@ -121,9 +100,6 @@
               <p>Product1, Product2</p>
             </td>
             <td>2</td>
-            <td>
-              <button></button>
-            </td>
           </tr>
           <tr>
             <td>
@@ -154,9 +130,6 @@
               <p>Product1, Product2, Product3</p>
             </td>
             <td>3</td>
-            <td>
-              <button></button>
-            </td>
           </tr>
           <tr>
             <td>
@@ -168,13 +141,9 @@
             </td>
             <td>
               <div>
-                <div>
-                  <span> Customer One </span>
+                <span> Customer One </span>
 
-                  <span> customerone@mail.com </span>
-                </div>
-
-                <button></button>
+                <span> customerone@mail.com </span>
               </div>
             </td>
             <td>
@@ -188,9 +157,6 @@
               <p>Product10</p>
             </td>
             <td>1</td>
-            <td>
-              <button></button>
-            </td>
           </tr>
         </tbody>
       </table>
