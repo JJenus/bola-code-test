@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl w-5/12 my-5" v-if="showModal">
+  <div ref="modal" class="bg-white dark:bg-slate-900 hidden rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl w-5/12 my-5">
     <form>
     <div>
       <div class="flex justify-between items-center pb-5">
@@ -20,7 +20,7 @@
         <div class="pb-3 w-5/12 ">
         <label class="block">
           <span class="block text-base font-medium text-slate-700" for="paymentMethod">Payment Method</span>
-          <!-- Using form state modifers, the classes can be identical for every input -->
+        
           
           <select id="paymentMethod" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
             focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300">
@@ -33,7 +33,7 @@
         <div class="pb-3 w-5/12">
         <label for="date"
            class="block text-base font-medium text-slate-700">Date Of Expense</label>
-          <!-- Using form state modifers, the classes can be identical for every input -->
+          
           <input t value="Amount" type="date" id="date"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
             focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300
           "/>
@@ -43,7 +43,7 @@
       </div>
       <div class="pb-3">
         <label class="block"><span class="block text-base font-medium text-slate-700">What was this payment for? (optional)</span>  </label>
-          <!-- Using form state modifers, the classes can be identical for every input -->
+          
           <textarea id="optionalText" placeholder="e.g new purchase of items" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
             focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300"/>
       
@@ -65,21 +65,25 @@
 </template>
 
 <script>
+
 export default {
 data() {
   return {
     count: 0,
-    showModal:true,
+    show: false
   }
+},
+
+mounted(){
+  console.log('move!');
 },
 
 methods: {
     closeModal(){
-      this.showModal=false;
-      console.log('Growth')
+      let modal = this.$refs.modal;
+      modal.classList.add("hidden");
     }
   }
-
 }
 </script>
 
