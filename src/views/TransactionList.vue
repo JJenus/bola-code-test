@@ -44,7 +44,7 @@
       <tbody class="text-center text-black">
         <tr class="pb-3 h-10">
           <td class="text-base text-black font-medium">
-              08-Apr-22 <br/>
+            <input type="checkbox"  class="pr-3"/>08-Apr-22 <br/>
             <span class="text-xs text-gray-500">8.34pm</span>
           </td>
           <td  class="text-base text-black font-medium">Lukeman Olawale</td>
@@ -78,9 +78,10 @@
         <a href="#"> Next &raquo; </a>
       </div>
       </div>
-   
+
+      <ExpenseModal/>
     </div>
- 
+    
   </div>
  
 </template>
@@ -89,10 +90,11 @@
 <script>
 
 import SideBar from '../components/CreateSideBar.vue';
-
+import ExpenseModal from '../components/CreateExpenseForm.vue'
 export default {
   components: {
-    SideBar
+    SideBar,
+    ExpenseModal
   }
 }
 
