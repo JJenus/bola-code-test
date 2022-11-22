@@ -82,6 +82,11 @@ methods: {
     closeModal(){
       let modal = this.$refs.modal;
       modal.classList.add("hidden");
+    },
+
+    showModal(){
+      let modal = this.$refs.modal;
+      modal.classList.remove("hidden");
     }
   }
 }
