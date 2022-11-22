@@ -8,10 +8,10 @@
       </div>
       <div class ="container shadow border roundedlg bg-white">
         <div class="action-call flex my-5  ">
-          <button class="bg-transparent flex bg-color text-blue-700 font-semibold hover:text-black px-4 mx-4 border border-blue-500 hover:border-transparent rounded items-center">
+          <button @click="showExpenseModal()" class="bg-transparent flex bg-color text-blue-700 font-semibold hover:text-black px-4 mx-4 border border-blue-500 hover:border-transparent rounded items-center" >
             <img src="../assets/plus.png" alt="menu" class="px-1"/> Add income
         </button>
-        <button class="bg-transparent flex text-red-500 font-semibold hover:text-white py-2 px-4  mx-4 border border-red-500 hover:border-transparent rounded items-center">
+        <button class="bg-transparent flex text-red-500 font-semibold hover:text-black py-2 px-4  mx-4 border border-red-500 hover:border-transparent rounded items-center">
           <img src="../assets/plus (1).png" alt="menu" class="px-1"/> Add Expense
       </button>
       <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-black py-2 px-4  mx-4 border border-blue-500 hover:border-transparent rounded">
@@ -79,7 +79,7 @@
       </div>
       </div>
 
-      <ExpenseModal/>
+      <ExpenseModal v-if="showModal"/>
     </div>
     
   </div>
@@ -95,7 +95,24 @@ export default {
   components: {
     SideBar,
     ExpenseModal
+  },
+
+data() {
+  return {
+    count: 0,
+    showModal:false,
   }
+},
+
+methods: {
+  // addExpense(message) {
+  //   alert(message)
+  // },
+  showExpenseModal() {
+    this.showModal=true;
+    console.log('hi bee!')
+  }
+}
 }
 
 </script>

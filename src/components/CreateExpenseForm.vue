@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl w-5/12 my-5">
+  <div class="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl w-5/12 my-5" v-if="showModal">
     <form>
     <div>
       <div class="flex justify-between items-center pb-5">
         <h2 class="text-lg font-semibold">New Expenses</h2>
-        <img src="../assets/x.png" alt="cancel">
+        <img src="../assets/x.png" alt="cancel" @click="closeModal()">
       </div>
       
       <div class="pb-3">
@@ -64,6 +64,23 @@
   
 </template>
 
-<script setup></script>
+<script>
+export default {
+data() {
+  return {
+    count: 0,
+    showModal:true,
+  }
+},
+
+methods: {
+    closeModal(){
+      this.showModal=false;
+      console.log('Growth')
+    }
+  }
+
+}
+</script>
 
 <style></style>
